@@ -8,7 +8,7 @@
 
 ## Why
 
-This repository is to enable developers, data scientists, or any other user to develop, test, and install neo4j desktop custom applications.
+This repository is to enable developers, data scientists, or any other user to develop, test, and install neo4j desktop custom applications. For more details, check out the [full explanation](https://github.com/wagnerjt/neo4j-apps/tree/master/contents/docs/get-started/why.md)
 
 ## Contributing
 
