@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import { Menu, Row, Icon } from 'antd'
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
+import { Menu, Row, Icon } from 'antd';
 
 interface Props {
-  siteTitle: string
+  siteTitle: string;
 }
 
 export class Header extends Component<Props> {
   render() {
-    const { siteTitle } = this.props
+    const { siteTitle } = this.props;
     return (
       <Row>
         <Menu mode="horizontal">
@@ -23,6 +23,6 @@ export class Header extends Component<Props> {
           </Menu.Item>
         </Menu>
       </Row>
-    )
+    );
   }
 }

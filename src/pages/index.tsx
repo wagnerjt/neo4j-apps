@@ -1,10 +1,10 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { Button, Icon, Card, List } from 'antd'
+import React from 'react';
+import { Link } from 'gatsby';
+import { Button, Icon, Card, List } from 'antd';
 
-import react from '../images/react-icon.png'
-import vue from '../images/vue-icon.png'
-import angular from '../images/angular-icon.png'
+import react from '../images/react-icon.png';
+import vue from '../images/vue-icon.png';
+import angular from '../images/angular-icon.png';
 
 const data = [
   {
@@ -22,7 +22,7 @@ const data = [
     framework: 'Angular',
     link: '/docs/angular/introduction',
   },
-]
+];
 
 const FrameworkCard = ({ icon, framework, link }) => (
   <Link to={link}>
@@ -34,7 +34,7 @@ const FrameworkCard = ({ icon, framework, link }) => (
       <Card.Meta description={framework} />
     </Card>
   </Link>
-)
+);
 
 const IndexPage = () => {
   return (
@@ -76,7 +76,7 @@ const IndexPage = () => {
         </Button>
       </Button.Group>
     </div>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

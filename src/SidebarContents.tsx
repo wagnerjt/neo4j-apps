@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import { graphql, StaticQuery, Link } from 'gatsby'
-import { Affix, Menu } from 'antd'
-import 'antd/lib/menu/style/css'
-import { pathPrefix } from '../gatsby-config'
+import React, { Component } from 'react';
+import { graphql, StaticQuery, Link } from 'gatsby';
+import { Affix, Menu } from 'antd';
+import 'antd/lib/menu/style/css';
+import { pathPrefix } from '../gatsby-config';
 
-const SubMenu = Menu.SubMenu
+const SubMenu = Menu.SubMenu;
 
 /**
  * Returns the current browser's pathname
@@ -12,15 +12,15 @@ const SubMenu = Menu.SubMenu
  * @returns {string} Pathname
  */
 const getPath = () => {
-  let key = '/' // root as default
+  let key = '/'; // root as default
   if (typeof window !== 'undefined')
     key =
       pathPrefix !== '/'
         ? pathPrefix + window.location.pathname
-        : window.location.pathname
+        : window.location.pathname;
 
-  return key
-}
+  return key;
+};
 
 const convertToTree = data => {
   const list = data.map(edge => {
@@ -29,18 +29,18 @@ const convertToTree = data => {
       key: edge.node.id,
       title: edge.node.frontmatter.title,
       parents: edge.node.frontmatter.parents,
-    }
-  })
-  return constructTree(list)
-}
+    };
+  });
+  return constructTree(list);
+};
 
 const constructTree = list => {
-  let tree = []
-  let dir = []
+  let tree = [];
+  let dir = [];
   list.forEach(item => {
-    if (item.parents === [] || item.parents === null) tree.push(item)
+    if (item.parents === [] || item.parents === null) tree.push(item);
     else {
-      let subtree = tree
+      let subtree = tree;
       for (let i = 0; i < item.parents.length; i++) {
         if (
           subtree.filter(
@@ -51,19 +51,19 @@ const constructTree = list => {
             key: item.path,
             title: item.parents[i],
             children: [],
-          }
-          subtree.push(newNode)
-          dir.push(newNode)
+          };
+          subtree.push(newNode);
+          dir.push(newNode);
         }
         subtree = subtree.find(
           node => node.title === item.parents[i] && node.children
-        ).children
+        ).children;
       }
-      subtree.push(item)
+      subtree.push(item);
     }
-  })
-  return [tree, dir]
-}
+  });
+  return [tree, dir];
+};
 
 const sortTree = tree => {
   tree.sort((a, b) => {
@@ -71,14 +71,14 @@ const sortTree = tree => {
       ((a.children && b.children) || (!a.children && !b.children)) &&
       a.title > b.title
     )
-      return 1
-    else if (a.children) return 1
-    return -1
-  })
-}
+      return 1;
+    else if (a.children) return 1;
+    return -1;
+  });
+};
 
 interface Props {
-  root: any
+  root: any;
 }
 
 export const SidebarContents = ({ root }: Props) => {
@@ -107,12 +107,12 @@ export const SidebarContents = ({ root }: Props) => {
           data.allMdx.edges.filter(node =>
             node.node.fields.slug.startsWith(root)
           )
-        )
-        sortTree(tree)
+        );
+        sortTree(tree);
         const loop = ({ data, activePath }) =>
           data.map(item => {
             if (item.children) {
-              sortTree(item.children)
+              sortTree(item.children);
               return (
                 <SubMenu
                   key={item.key}
@@ -120,7 +120,7 @@ export const SidebarContents = ({ root }: Props) => {
                 >
                   {loop({ data: item.children, activePath })}
                 </SubMenu>
-              )
+              );
             }
             return (
               <Menu.Item key={item.path}>
@@ -128,11 +128,11 @@ export const SidebarContents = ({ root }: Props) => {
                   <div>{item.title}</div>
                 </Link>
               </Menu.Item>
-            )
-          })
+            );
+          });
 
-        const currentPath = getPath()
-        const defaultOpenKeys = dir.map(item => item.key)
+        const currentPath = getPath();
+        const defaultOpenKeys = dir.map(item => item.key);
         return (
           <Affix>
             <Menu
@@ -144,8 +144,8 @@ export const SidebarContents = ({ root }: Props) => {
               {loop({ data: tree, activePath: [currentPath] })}
             </Menu>
           </Affix>
-        )
+        );
       }}
     />
-  )
-}
+  );
+};

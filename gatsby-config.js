@@ -80,4 +80,4 @@ module.exports = {
   ],
   /// this must match the path your webpage is displayed from
   pathPrefix: process.env.NODE_ENV === 'development' ? '/' : '/neo4j-apps',
-}
+};

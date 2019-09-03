@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link, graphql, StaticQuery } from 'gatsby'
+import React from 'react';
+import { Link, graphql, StaticQuery } from 'gatsby';
 
 export const Menu = () => {
   return (
@@ -19,7 +19,7 @@ export const Menu = () => {
       render={data => {
         const menuItems = data.allMenuItems.edges
           .map(edge => edge.node)
-          .reverse()
+          .reverse();
         return (
           <div>
             {menuItems.map(item => {
@@ -37,11 +37,11 @@ export const Menu = () => {
                     </Link>
                   </p>
                 </div>
-              )
+              );
             })}
           </div>
-        )
+        );
       }}
     />
-  )
-}
+  );
+};

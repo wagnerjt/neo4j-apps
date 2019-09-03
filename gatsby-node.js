@@ -9,4 +9,4 @@
 module.exports = {
   createPages: require('./gatsby/createPages'),
   onCreateNode: require('./gatsby/onCreateNode'),
-}
+};
