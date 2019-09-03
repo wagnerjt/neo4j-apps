@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-antd-docs",
-  "description": "Gatsby Antd Docs Starter",
+  "name": "neo4j-apps",
+  "description": "Neo4j Desktop Application Documentation",
   "version": "0.1.0",
-  "author": "Jannik Buschke",
+  "author": "Tyler Wagner",
   "dependencies": {
     "@mdx-js/mdx": "1.0.10",
     "@mdx-js/react": "1.0.6",
@@ -18,7 +18,6 @@
     "gatsby-plugin-sharp": "2.0.29",
     "gatsby-plugin-typescript": "^2.0.11",
     "gatsby-remark-autolink-headers": "2.0.16",
-    "gatsby-remark-katex": "2.0.6",
     "gatsby-remark-prismjs": "3.2.8",
     "gatsby-source-filesystem": "2.0.27",
     "gatsby-transformer-json": "2.1.11",
@@ -35,12 +34,12 @@
     "gatsby"
   ],
   "browserslist": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all",
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+    ">0.2%",
+    "not dead",
+    "not op_mini all",
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
   ],
   "license": "MIT",
   "scripts": {
@@ -52,16 +51,16 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
-    "gatsby-plugin-remove-trailing-slashes": "2.0.10",
-    "gh-pages": "2.0.1",
-    "prettier": "1.16.4",
     "@types/node": "11.11.3",
     "@types/react": "16.8.8",
     "@types/react-dom": "16.8.2",
-    "@types/react-helmet": "5.0.8"
+    "@types/react-helmet": "5.0.8",
+    "gatsby-plugin-remove-trailing-slashes": "2.0.10",
+    "gh-pages": "2.0.1",
+    "prettier": "1.16.4"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jannikbuschke/gatsby-antd-docs"
+    "url": "https://github.com/wagnerjt/neo4j-apps"
   }
 }

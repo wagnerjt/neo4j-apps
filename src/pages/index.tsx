@@ -17,21 +17,17 @@ const IndexPage = () => {
       <h2>A gatsby starter to create documentation websites</h2>
       <p>
         This is a fork of{' '}
-        <a href="https://github.com/cvluca/gatsby-starter-markdown">
-          https://github.com/cvluca/gatsby-starter-markdown
+        <a href="https://github.com/jannikbuschke/gatsby-antd-docs">
+          https://github.com/jannikbuschke/gatsby-antd-docs
         </a>
       </p>
       <br />
       <Button.Group size="large">
-        <Button href="https://twitter.com/jannikbuschke" target="_blank">
-          Twitter
-          <Icon type="twitter" />
-        </Button>
         <Button
-          href="https://github.com/jannikbuschke/gatsby-antd-docs"
+          href="https://github.com/wagnerjt/neo4j-apps"
           target="_blank"
         >
-          Github
+          Contribute
           <Icon type="github" />
         </Button>
         <Button type="primary">

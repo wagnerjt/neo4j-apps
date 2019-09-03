@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Ant-Design Documentation Starter',
+    title: 'Neo4j Desktop Application Documentation',
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -46,20 +46,20 @@ module.exports = {
         icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          `gatsby-remark-katex`,
-          {
-            resolve: `gatsby-remark-autolink-headers`,
-            options: {
-              className: 'post-toc-anchor',
-            },
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-transformer-remark`,
+    //   options: {
+    //     plugins: [
+    //       `gatsby-remark-katex`,
+    //       {
+    //         resolve: `gatsby-remark-autolink-headers`,
+    //         options: {
+    //           className: 'post-toc-anchor',
+    //         },
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-mdx`,
       options: {
@@ -69,7 +69,7 @@ module.exports = {
         extensions: ['.mdx', '.md'],
         remarkPlugins: [require('gatsby-transformer-remark')],
         gatsbyRemarkPlugins: [
-          'gatsby-remark-katex',
+          // 'gatsby-remark-katex',
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
@@ -94,5 +94,5 @@ module.exports = {
     // 'gatsby-plugin-offline',
   ],
   /// this must match the path your webpage is displayed from
-  pathPrefix: process.env.NODE_ENV === 'development' ? '/' : '/gatsby-antd-docs',
+  pathPrefix: process.env.NODE_ENV === 'development' ? '/' : '/neo4j-apps',
 }
