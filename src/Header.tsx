@@ -16,10 +16,7 @@ export class Header extends Component<Props> {
             <Link to="/docs/get-started/introduction/">{siteTitle}</Link>
           </Menu.Item>
           <Menu.Item>
-            <a
-              href="https://github.com/wagnerjt/neo4j-apps"
-              target="_blank"
-            >
+            <a href="https://github.com/wagnerjt/neo4j-apps" target="_blank">
               <Icon type="github" />
               Contribute
             </a>
