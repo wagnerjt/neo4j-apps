@@ -72,7 +72,7 @@ const IndexPage = () => {
           <Icon type="github" />
         </Button>
         <Button type="primary">
-          <Link to="/docs/get-started/introduction">Get Started</Link>
+          <Link to="/docs/get-started/why">Get Started</Link>
         </Button>
       </Button.Group>
     </div>

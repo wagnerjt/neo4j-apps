@@ -56,8 +56,8 @@ export function RootLayout({ children, sidebarRoot }: any) {
             <Helmet
               title={data.site.siteMetadata.title}
               meta={[
-                { name: 'description', content: 'Sample' },
-                { name: 'keywords', content: 'sample, something' },
+                { name: 'description', content: 'Neo4j Graph App' },
+                { name: 'keywords', content: 'neo4j, graph apps' },
               ]}
             >
               <html lang="en" />

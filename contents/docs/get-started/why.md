@@ -6,7 +6,7 @@ parents: ['Get Started']
 
 <h1 align="center">
   Why?
-</h1
+</h1>
 
 ## Overview
 
