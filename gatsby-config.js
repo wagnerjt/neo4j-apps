@@ -1,6 +1,8 @@
+const config = require('./config');
+
 module.exports = {
   siteMetadata: {
-    title: 'Neo4j Desktop Application Documentation',
+    title: config.siteTitle,
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -9,20 +11,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-json`,
-      options: {
-        typeName: `MenuItems`, // a fixed string
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `menuItems`,
-        path: `${__dirname}/src/menuItems`,
+        path: `${__dirname}/static/images`,
       },
     },
     {
@@ -40,10 +29,10 @@ module.exports = {
         name: 'gatsby-starter-markdown',
         short_name: 'starter',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: config.backgrounColor,
+        theme_color: config.themeColor,
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: config.icon, // This path is relative to the root of the site.
       },
     },
     {
@@ -73,11 +62,19 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: config.googleAnalytics,
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: true,
+      },
+    },
     `gatsby-plugin-remove-trailing-slashes`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
   /// this must match the path your webpage is displayed from
-  pathPrefix: process.env.NODE_ENV === 'development' ? '/' : '/neo4j-apps',
+  pathPrefix: process.env.NODE_ENV === 'development' ? '/' : config.pathPrefix,
 };

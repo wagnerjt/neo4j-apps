@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { Button, Icon, Card, List } from 'antd';
 
-import react from '../images/react-icon.png';
-import vue from '../images/vue-icon.png';
-import angular from '../images/angular-icon.png';
+import react from '../../static/images/react-icon.png';
+import vue from '../../static/images/vue-icon.png';
+import angular from '../../static/images/angular-icon.png';
 
 const data = [
   {
